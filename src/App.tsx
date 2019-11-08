@@ -1,26 +1,18 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import './App.css'
+import { MapRenderer } from './renderer/map-renderer'
+import { TerrainMap } from './terrain-generator/terrain-map'
 
 const App: React.FC = () => {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+  (window as any).terrainMap = TerrainMap;
+  
+  return <div className='App'>
+    <MapRenderer>
+
+    </MapRenderer>
+  </div>
 }
 
-export default App;
+export default App
+
